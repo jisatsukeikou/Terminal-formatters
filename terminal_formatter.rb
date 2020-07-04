@@ -1,4 +1,8 @@
 module TerminalFormatter
+  attr_accessor :images_path
+
+  @@images_path = ""
+
   module Conky
     extend self
 
@@ -94,7 +98,7 @@ module TerminalFormatter
     end
 
     def image(image_name)
-      "^i(#{IMAGES_PATH}/#{image_name})"
+      "^i(#{TerminalFormatter.images_path}/#{image_name})"
     end
   end 
 end
