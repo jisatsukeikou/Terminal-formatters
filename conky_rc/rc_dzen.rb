@@ -1,26 +1,23 @@
 #!/usr/bin/env ruby
 
-require_relative '../terminal_formatter'
+require "/home/pieceoftrash/scripts/terminal-formatters/terminal_formatter.rb"
 
 
 include TerminalFormatter
 
 TerminalFormatter.images_path  = "/home/pieceoftrash/.xmonad/xbm"
-scripts_path = "/home/pieceoftrash/.conky"
+scripts_path = "/home/pieceoftrash/scripts/conky"
 
 conky_config = Conky::Config.new(
   background: false,
-  double_buffer: true,
-  use_xft: true,
-  override_utf_8_locale: true,
+  out_to_console: true,
+  out_to_x: false,
   no_buffers: true,
-  own_window: true,
-  own_window_transparent: true,
-  own_window_argb_visual: true,
-  border_width: 0,
-  cpu_avg_samples: 2,
-  gap_x: 620,
-  gap_y: 10
+  update_interval: 1.0,
+  uppercase: false,
+  use_spacer: 'none',
+  short_units: true,
+  pad_percents: 2
 )
 
 conky_text = Conky::Text.new do |text|

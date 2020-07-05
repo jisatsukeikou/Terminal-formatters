@@ -37,7 +37,7 @@ module TerminalFormatter
                       when :right then "alignr"
                       else "alignl"
                       end
-      "${#{direction_tag} #{offset}"
+      "${#{direction_tag} #{offset}}"
     end
 
     def space(space_count = 1)
