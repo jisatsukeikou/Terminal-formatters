@@ -18,7 +18,7 @@ module TerminalFormatter
       params_string = params
         .map do |k, v| ?: + k.to_s + ?= + v.to_s end
         .reduce(&:+)
-      opening = "${font #{font_name}#{params_string}}" 
+      opening = "${font #{font_name}#{params_string}}"
       closing = "${font}"
 
       opening << yield(String.new) << closing
@@ -38,6 +38,10 @@ module TerminalFormatter
                       else "alignl"
                       end
       "${#{direction_tag} #{offset}}"
+    end
+
+    def offset(offset)
+      "${offset #{offset}}"
     end
 
     def space(space_count = 1)
@@ -87,7 +91,7 @@ module TerminalFormatter
     end
   end
 
-  module Dzen 
+  module Dzen
     extend self
 
     def fg(color, &block)
@@ -100,5 +104,5 @@ module TerminalFormatter
     def image(image_name)
       "^i(#{TerminalFormatter.images_path}/#{image_name})"
     end
-  end 
+  end
 end
