@@ -14,6 +14,14 @@ module TerminalFormatter
       end
     end
 
+    def execi(interval, command)
+      run("execi", interval, command)
+    end
+
+    def execpi(interval, command)
+      run("execpi", interval, command)
+    end
+
     def font(font_name, params = {})
       params_string = params
         .map do |k, v| ?: + k.to_s + ?= + v.to_s end
