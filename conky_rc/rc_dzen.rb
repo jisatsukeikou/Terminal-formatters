@@ -2,7 +2,6 @@
 
 require "/home/pieceoftrash/scripts/terminal-formatters/terminal_formatter.rb"
 
-
 include TerminalFormatter
 
 TerminalFormatter.images_path  = "/home/pieceoftrash/.xmonad/xbm"
