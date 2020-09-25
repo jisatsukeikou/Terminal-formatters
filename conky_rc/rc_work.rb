@@ -28,7 +28,7 @@ conky_config = Conky::Config.new(
   alignment: "'top_middle'",
   default_color: "'211F2C'",
   own_window_class: "'Conky'",
-  own_window_type: "'desktop'",
+  own_window_type: "'override'",
   own_window_hints: "'undecorated,below,sticky,skip_taskbar,skip_pager'"
 )
 
